@@ -15,8 +15,8 @@
                         </figure>
                     </div>
                     <div class="media-content">
-                        <p class="title is-4">Pirce</p>
-                        <p class="subtitle is-6">{{ show.price }}</p>
+                        <p class="title is-4">{{ show.name }}</p>
+                        <p class="subtitle is-6">Price {{ show.price }} Bath</p>
                     </div>
                 </div>
             </div>

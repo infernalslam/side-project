@@ -37,6 +37,7 @@ export default {
     setData (data) {
       var row = data.length / 3
       row = Math.ceil(row)
+      data.reverse()
       console.log('row ::', row) // 16
       this.left = data.slice(0, row - 1)
       this.center = data.slice(row, (row + row) - 1)
