@@ -3,8 +3,9 @@
   <div class="section" v-for="show in center">
     <div class="card">
             <div class="card-image">
-                <figure class="image is-4by3">
-                    <img class="fix" :src="show.url" :alt="show.name" width="500px" height="500px">
+              <span class="tag is-danger is-large">Free print</span>
+                <figure class="image is-square">
+                    <img :src="show.url" :alt="show.name" @click="printImg(show.url)">
                 </figure>
             </div>
             <div class="card-content">
@@ -28,13 +29,6 @@
 <script>
 export default {
   name: 'listcenter',
-  props: ['center']
+  props: ['center', 'printImg']
 }
 </script>
-
-<style scoped>
-.fix {
-  width: 500px !important;
-  height:500px !important;
-}
-</style>

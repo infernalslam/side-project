@@ -1,7 +1,7 @@
 <template>
   <div>
     <header-view></header-view>
-    <list-view :left="left" :center="center" :right="right"></list-view>
+    <list-view :left="left" :center="center" :right="right" :print-img="printImg"></list-view>
   </div>
 </template>
 
@@ -45,7 +45,22 @@ export default {
       console.log('left ', this.left)
       console.log('center ', this.center)
       console.log('right ', this.right)
+    },
+    printImg (source) {
+      let capture = `<center><img src='${source}' width="500px" height="500px"></center>`
+      console.log(capture)
+      var printWindow = window.open('', 'Print Window', 'height=auto,width=auto')
+      printWindow.document.write(capture)
+      printWindow.document.close()
+      printWindow.print()
     }
   }
 }
 </script>
+
+<style>
+.fix {
+  width: 500px !important;
+  height:500px !important;
+}
+</style>

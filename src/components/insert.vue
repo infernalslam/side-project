@@ -26,6 +26,7 @@
       <img :src="show.url"> <br>
       {{show.price}}
       <button@click="edit(show.id)"> {{mode2}} </button>
+      <button@click="del(show.id)"> del </button>
       <br><hr>
     </div>
 
@@ -112,6 +113,9 @@ export default {
         this.newName = ''
         this.newUrl = ''
       }
+    },
+    del (id) {
+      firebase.database().ref('libstick/' + id).remove()
     }
   }
 }
